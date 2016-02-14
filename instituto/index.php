@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/index.css">
+	<link rel="stylesheet" type="text/css" href="../mvc/view/css/instituto.css">
 	<script src="../mvc/view/js/jquery.min.js"></script>
 	<script src="../mvc/view/js/bootstrap.min.js"></script>
 	<script src="../mvc/view/js/navigation.js"></script>

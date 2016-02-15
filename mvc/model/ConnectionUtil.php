@@ -8,12 +8,19 @@ class ConnectionUtil {
 		$username = 'root';
 		$password = 'veriwicows';
 		$database = 'bd - educacao';
+
+		header('Content-Type: text/html; charset=utf-8');
 		
 		$this->conn = mysql_connect($hostname, $username, $password)
 		or die (mysql_error());
 
 		$this->comm = mysql_select_db($database, $this->conn)
-		or die (mysql_error());		
+		or die (mysql_error());
+
+		mysql_query("SET NAMES 'utf8'");
+		mysql_query('SET character_set_connection=utf8');
+		mysql_query('SET character_set_client=utf8');
+		mysql_query('SET character_set_results=utf8');
 
 	}
 	

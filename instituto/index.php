@@ -3,7 +3,7 @@
 
 <head>
 	<title>PHP MVC</title>
-	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/index.css">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/instituto.css">

@@ -17,7 +17,7 @@ var ler = function(){
 	});
 }
 
-var atualizar = function(){
+var atualizar = function(){ 
 
 }
 

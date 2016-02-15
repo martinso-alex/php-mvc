@@ -10,6 +10,7 @@
 	<script src="../mvc/view/js/jquery.min.js"></script>
 	<script src="../mvc/view/js/bootstrap.min.js"></script>
 	<script src="../mvc/view/js/navigation.js"></script>
+	<script src="../mvc/controller/js/instituto.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,7 @@
 			<li id="curs-nav">CURSO</li>
 		</ul>
 	</div>
+	<div id="inst-view"></div>
 
 </body>
 

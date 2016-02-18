@@ -9,10 +9,28 @@ require('../model/service/InstitutoService.php');
 $func = $_POST['func'];
 
 switch($func){
+	
 	case 'ler':
+		
 		$institutos = InstitutoService::getInstitutos();
 		InstitutoView::exibeInstitutos($institutos);
 	break;
+
+	case 'criar':
+		
+		$instituto = new Instituto();
+		$instituto->setNome($_POST['instituto']);
+
+		$criar = InstitutoService::inserir($instituto);
+
+		if($criar === 0){
+			$institutos = InstitutoService::getInstitutos();
+			InstitutoView::exibeInstitutos($institutos);
+		}else{
+			echo 'nope';
+		}
+	break;
+
 }
 
 ?>

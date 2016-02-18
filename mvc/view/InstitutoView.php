@@ -12,9 +12,11 @@ class InstitutoView{
 		$view .= "<input id=\"criar-inst\" type=\"text\" size=\"35\">";
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
 		$view .= "<form>";
-		$view .= "<br>";
+		$view .= "<br><br>";
 
-		$view .= "<br>";
+		$view .= "<div id=\"alert\"></div>";
+
+		$view .= "";
 		$view .= "<h2>Gerenciar Institutos</h2>";
 		$view .= "<br>";
 
@@ -52,6 +54,7 @@ class InstitutoView{
 
 		echo $view;
 	}
+
 }
 
 ?>

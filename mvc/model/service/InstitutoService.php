@@ -8,12 +8,12 @@ class InstitutoService {
 	}
 
 	public static function inserir($instituto) {
-		if(is_null(InstitutoService::getByNome($instituto->getNome()))){
+		if(is_null(InstitutoService::getByNome($instituto->getNome())) && $instituto != ''){
 			InstitutoDao::inserir($instituto);
-			return(0);
+			return 0;
 		}
 		else{
-			return NULL;
+			return null;
 		}
 	}
 

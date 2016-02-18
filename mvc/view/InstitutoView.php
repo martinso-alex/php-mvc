@@ -31,7 +31,7 @@ class InstitutoView{
 
 		if($institutos != null){
 			for($i=0;$i<sizeof($institutos);$i++){
-				$view .= "<tr id='tr".$institutos[$i]->getId()."'>";
+				$view .= "<tr id='".$institutos[$i]->getId()."'>";
 				
 				$view .= "<td>";
 				$view .= $institutos[$i]->getNome();

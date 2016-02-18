@@ -31,6 +31,16 @@ switch($func){
 		}
 	break;
 
+	case 'deletar':
+		$instituto = new Instituto();
+		$instituto->setId($_POST['id']);
+
+		InstitutoService::delete($instituto);
+		$institutos = InstitutoService::getInstitutos();
+		InstitutoView::exibeInstitutos($institutos);
+
+	break;
+
 }
 
 ?>

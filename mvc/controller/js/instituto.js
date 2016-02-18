@@ -45,10 +45,23 @@ var atualizar = function(){
 }
 
 var deletar = function(){
-
+	$(document).on('click','.glyphicon-remove', function(){
+		var id = $(this).parent().parent().attr('id');
+		
+		if(confirm('Tem certeza que deseja deletar esse instituto?')){
+			$.ajax({
+				type: "POST",
+				url: '../mvc/controller/InstitutoController.php',
+				data: {func:'deletar',id:id},
+				success: function(data){
+					$('#inst-view').html(data);
+				}
+			});
+		}
+	});
 }
 
 $(document).ready(criar);
 $(document).ready(ler);
 //$(document).ready(atualizar);
-//$(document).ready(deletar);
+$(document).ready(deletar);

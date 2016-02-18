@@ -10,11 +10,11 @@ input{
 	margin-left: 30%;
 }
 
-#alert{
+#alert,#alert-alt{
 	margin-left: 30%;
 }
 
-#add{
+#add,#alt,#cancela{
 	display: inline-block;
 	margin-left: 30px;
 	background-color: #313131;
@@ -24,8 +24,13 @@ input{
 	padding-right: 12px;
 }
 
-#add:hover{
+#add:hover,#alt:hover{
 	background-color: #2980b9;
+	cursor: pointer;
+}
+
+#cancela:hover{
+	background-color: #e74c3c;
 	cursor: pointer;
 }
 
@@ -43,6 +48,6 @@ i:hover{
 	color: #2980b9;
 }
 
-.glyphicon-plus:hover{
+.glyphicon-plus:hover,.alt-ico:hover{
 	color: white;
 }

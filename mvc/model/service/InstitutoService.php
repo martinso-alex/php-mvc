@@ -8,7 +8,7 @@ class InstitutoService {
 	}
 
 	public static function inserir($instituto) {
-		if(is_null(InstitutoService::getByNome($instituto->getNome())) && $instituto != ''){
+		if(is_null(InstitutoService::getByNome($instituto->getNome())) && $instituto->getNome() != ''){
 			InstitutoDao::inserir($instituto);
 			return 0;
 		}
@@ -27,7 +27,13 @@ class InstitutoService {
 	}
 
 	public static function alterar($instituto){
-		InstitutoDao::alterar($instituto);
+		if(InstitutoService::getById($instituto->getId()) != null && $instituto->getNome() != '' && is_null(InstitutoService::getByNome($instituto->getNome()))){
+			InstitutoDao::alterar($instituto);
+			return 0;
+		}
+		else{
+			return null;
+		}
 	}
 
 	public static function getByNome($instituto){

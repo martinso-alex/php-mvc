@@ -11,12 +11,27 @@ class InstitutoView{
 		$view .= "<form>";
 		$view .= "<input id=\"criar-inst\" type=\"text\" size=\"35\">";
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
-		$view .= "<form>";
-		$view .= "<br><br>";
+		$view .= "</form>";
+		$view .= "<br>";
 
 		$view .= "<div id=\"alert\"></div>";
 
-		$view .= "";
+		$view .= "<div id=\"alt-div\" style=\"display:none\">";
+
+		$view .= "<h2>Alterar Instituto</h2>";
+		$view .= "<br>";
+
+		$view .= "<form>";
+		$view .= "<input id=\"alterar-inst\" type=\"text\" size=\"35\">";
+		$view .= "<div id=\"alt\"><i class=\"glyphicon glyphicon-ok alt-ico\"></i></div>";
+		$view .= "<div id=\"cancela\"><i class=\"glyphicon glyphicon-remove alt-ico\"></i></div>";
+		$view .= "</form>";
+		$view .= "<br>";
+
+		$view .= "<div id=\"alert-alt\"></div>";
+
+		$view .= "</div>";
+
 		$view .= "<h2>Gerenciar Institutos</h2>";
 		$view .= "<br>";
 
@@ -38,11 +53,11 @@ class InstitutoView{
 				$view .= "</td>";
 
 				$view .= "<td>";
-				$view .= "<i class=\"glyphicon glyphicon-remove\"></i>";
+				$view .= "<i class=\"glyphicon glyphicon-remove remove\"></i>";
 				$view .= "</td>";
 
 				$view .= "<td>";
-				$view .= "<i class=\"glyphicon glyphicon-pencil\"></i>";
+				$view .= "<i class=\"glyphicon glyphicon-pencil pencil\"></i>";
 				$view .= "</td>";
 
 				$view .= "</tr>";

@@ -14,6 +14,7 @@ switch($func){
 		
 		$institutos = InstitutoService::getInstitutos();
 		InstitutoView::exibeInstitutos($institutos);
+
 	break;
 
 	case 'criar':
@@ -29,15 +30,34 @@ switch($func){
 		}else{
 			echo 'nope';
 		}
+
 	break;
 
 	case 'deletar':
+
 		$instituto = new Instituto();
 		$instituto->setId($_POST['id']);
 
 		InstitutoService::delete($instituto);
 		$institutos = InstitutoService::getInstitutos();
 		InstitutoView::exibeInstitutos($institutos);
+
+	break;
+
+	case 'alterar':
+
+		$instituto = new Instituto();
+		$instituto->setId($_POST['id']);
+		$instituto->setNome($_POST['nome']);
+
+		$alterar = InstitutoService::alterar($instituto);
+
+		if($alterar === 0){
+			$institutos = InstitutoService::getInstitutos();
+			InstitutoView::exibeInstitutos($institutos);
+		}else{
+			echo 'nope';
+		}
 
 	break;
 

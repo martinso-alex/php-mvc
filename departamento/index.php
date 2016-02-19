@@ -3,13 +3,14 @@
 
 <head>
 	<title>PHP MVC</title>
-	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/index.css">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/departamento.css">
 	<script src="../mvc/view/js/jquery.min.js"></script>
 	<script src="../mvc/view/js/bootstrap.min.js"></script>
 	<script src="../mvc/view/js/navigation.js"></script>
+	<script src="../mvc/controller/js/departamento.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,7 @@
 			<li id="curs-nav">CURSO</li>
 		</ul>
 	</div>
+	<div id="inst-view"></div>
 
 </body>
 

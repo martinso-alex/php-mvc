@@ -51,3 +51,10 @@ i:hover{
 .glyphicon-plus:hover,.alt-ico:hover{
 	color: white;
 }
+
+#elefante{
+	float: right;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}

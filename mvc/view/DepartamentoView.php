@@ -1,15 +1,15 @@
 <?php
 
-class InstitutoView{
-	public static function exibeInstitutos($institutos){
+class DepartamentoView{
+	public static function exibeDepartamentos($departamentos){
 		$view = "";
 
 		$view .= "<br>";
-		$view .= "<h2>Adicionar Instituto</h2>";
+		$view .= "<h2>Adicionar Departamento</h2>";
 		$view .= "<br>";
 
 		$view .= "<form>";
-		$view .= "<input id=\"criar-inst\" type=\"text\" size=\"35\" maxlength=\"45\">";
+		$view .= "<input id=\"criar-inst\" type=\"text\" size=\"35\">";
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
 		$view .= "</form>";
 		$view .= "<br>";
@@ -18,7 +18,7 @@ class InstitutoView{
 
 		$view .= "<div id=\"alt-div\" style=\"display:none\">";
 
-		$view .= "<h2>Alterar Instituto</h2>";
+		$view .= "<h2>Alterar Departamento</h2>";
 		$view .= "<br>";
 
 		$view .= "<form>";
@@ -32,27 +32,32 @@ class InstitutoView{
 
 		$view .= "</div>";
 
-		$view .= "<h2>Gerenciar Institutos</h2>";
+		$view .= "<h2>Gerenciar Departamentos</h2>";
 		$view .= "<br>";
 
 		$view .= "<div id=\"table\">";
-		$view .= "<table class=\"table table-hover\">";
+		$view .= "<table class=\"table table-hover table-condensed\">";
 
 		$view .= "<thead>";
 		$view .= "<tr>";
 		$view .= "<th>Nome</th>";
+		$view .= "<th>Instituto</th>";
 		$view .= "<th>Excluir</th>";
 		$view .= "<th>Atualizar</th>";
 		$view .= "</tr>";
 		$view .= "</thead>";
 		$view .= "<tbody>";
 
-		if($institutos != null){
-			for($i=0;$i<sizeof($institutos);$i++){
-				$view .= "<tr id='".$institutos[$i]->getId()."'>";
+		if($departamentos != null){
+			for($i=0;$i<sizeof($departamentos);$i++){
+				$view .= "<tr id='".$departamentos[$i]->getId()."'>";
 				
 				$view .= "<td>";
-				$view .= $institutos[$i]->getNome();
+				$view .= $departamentos[$i]->getNome();
+				$view .= "</td>";
+
+				$view .= "<td>";
+				$view .= $departamentos[$i]->getInst_nome();
 				$view .= "</td>";
 
 				$view .= "<td>";
@@ -73,7 +78,6 @@ class InstitutoView{
 
 		echo $view;
 	}
-
 }
 
 ?>

@@ -62,7 +62,9 @@ var deletar = function(){
 var alterar = function(){ 
 	$(document).on('click','.pencil', function(){
 		id_alt_global = $(this).parent().parent().attr('id');
-		$('#alt-div').show();		
+		$('#alt-div').show();
+		$('tr').removeClass('info');
+		$('#'+id_alt_global).addClass('info');
 	});
 }
 
@@ -70,6 +72,7 @@ var cancela_alteracao = function(){
 	$(document).on('click','#cancela', function(){
 		$('#alt-div').hide();
 		$('#alert-alt').html('');
+		$('#'+id_alt_global).removeClass('info');
 	});
 }
 

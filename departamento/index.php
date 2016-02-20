@@ -26,6 +26,7 @@
 		</ul>
 	</div>
 	<div id="inst-view"></div>
+	<img id="elefante" src="../img/elefante-indiano.jpg" alt="elefante">
 
 </body>
 

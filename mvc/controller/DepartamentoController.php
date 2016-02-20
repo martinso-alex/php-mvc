@@ -5,6 +5,9 @@ require('../model/ConnectionUtil.php');
 require('../model/classes/Departamento.php');
 require('../model/dao/DepartamentoDao.php');
 require('../model/service/DepartamentoService.php');
+require('../model/classes/Instituto.php');
+require('../model/dao/InstitutoDao.php');
+require('../model/service/InstitutoService.php');
 
 $func = $_POST['func'];
 
@@ -13,7 +16,8 @@ switch($func){
 	case 'ler':
 
 		$departamentos = DepartamentoService::getDepartamentosInsts();
-		DepartamentoView::exibeDepartamentos($departamentos);
+		$institutos = InstitutoService::getInstitutos();
+		DepartamentoView::exibeDepartamentos($departamentos,$institutos);
 
 	break;
 

@@ -9,7 +9,6 @@ class DepartamentoDao{
 		$departamento = new Departamento();
 		$departamento->setId($record["idDepartamento"]);
 		$departamento->setNome($record["Nome"]);
-		$departamento->setInst_id($record["Instituto_idInstituto"]);
 
 		return $departamento;
 	}
@@ -19,9 +18,9 @@ class DepartamentoDao{
 		if($record == null) return null;
 
 		$departamento = new Departamento();
-		$departamento->setId($record["idDepartamento.Departamento"]);
-		$departamento->setNome($record["Nome.Departamento"]);
-		$departamento->setInst_nome($record["Nome.Instituto"]);
+		$departamento->setId($record[0]);
+		$departamento->setNome($record[1]);
+		$departamento->setInst_nome($record[2]);
 
 		return $departamento;
 	}
@@ -58,8 +57,10 @@ class DepartamentoDao{
 	}
 
 	public function getDepartamentosInsts(){
-		$sql = "SELECT idDepartamento.Departamento, Nome.Departamento, Nome.Instituto ";
-		$sql .= "FROM Departamento,Instituto ORDER BY Nome.Departamento ASC";
+		$sql = "SELECT Departamento.idDepartamento,Departamento.Nome,Instituto.Nome 
+				FROM Departamento,Instituto 
+				WHERE Departamento.Instituto_idInstituto = Instituto.idInstituto
+				ORDER BY Departamento.Nome ASC";
 		$resultset = ConnectionUtil::executarSelect($sql);
 
 		return DepartamentoDao::parseListDeptInst($resultset);

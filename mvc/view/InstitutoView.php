@@ -8,8 +8,8 @@ class InstitutoView{
 		$view .= "<h2>Adicionar Instituto</h2>";
 		$view .= "<br>";
 
-		$view .= "<form>";
-		$view .= "<input id=\"criar-inst\" type=\"text\" size=\"35\" maxlength=\"45\">";
+		$view .= "<form class=\"form-inline\">";
+		$view .= "<input id=\"criar-inst\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"35\" maxlength=\"45\">";
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
 		$view .= "</form>";
 		$view .= "<br>";
@@ -21,8 +21,8 @@ class InstitutoView{
 		$view .= "<h2>Alterar Instituto</h2>";
 		$view .= "<br>";
 
-		$view .= "<form>";
-		$view .= "<input id=\"alterar-inst\" type=\"text\" size=\"35\">";
+		$view .= "<form class=\"form-inline\">";
+		$view .= "<input id=\"alterar-inst\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"35\" maxlength=\"45\">";
 		$view .= "<div id=\"alt\"><i class=\"glyphicon glyphicon-ok alt-ico\"></i></div>";
 		$view .= "<div id=\"cancela\"><i class=\"glyphicon glyphicon-remove alt-ico\"></i></div>";
 		$view .= "</form>";

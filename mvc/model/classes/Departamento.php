@@ -4,6 +4,7 @@ class Departamento{
 
 	private $id;
 	private $nome;
+	private $inst_id;
 	private $inst_nome;
 
 	public function getId() {
@@ -20,6 +21,14 @@ class Departamento{
 
 	public function setNome($nome) {
 		$this->nome = $nome;
+	}
+
+	public function getInst_id() {
+		return $this->inst_id;
+	}
+
+	public function setInst_id($inst_id) {
+		$this->inst_id = $inst_id;
 	}
 
 	public function getInst_nome(){

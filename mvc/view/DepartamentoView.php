@@ -9,8 +9,8 @@ class DepartamentoView{
 		$view .= "<br>";
 
 		$view .= "<form class=\"form-inline\">";
-		$view .= "<input id=\"criar-dept\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"5\" maxlength=\"3\">";
-		$view .= DepartamentoView::exibeInstitutos($institutos);
+		$view .= "<input id=\"criar-dept\" class=\"form-control\" type=\"text\" size=\"5\" maxlength=\"3\">";
+		$view .= DepartamentoView::exibeInstitutos($institutos,"criar-dept-inst");
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
 		$view .= "</form>";
 		$view .= "<br>";
@@ -23,8 +23,8 @@ class DepartamentoView{
 		$view .= "<br>";
 
 		$view .= "<form class=\"form-inline\">";
-		$view .= "<input id=\"alterar-inst\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"5\" maxlength=\"3\">";
-		$view .= DepartamentoView::exibeInstitutos($institutos);
+		$view .= "<input id=\"alterar-dept\" class=\"form-control\" type=\"text\" size=\"5\" maxlength=\"3\">";
+		$view .= DepartamentoView::exibeInstitutos($institutos,"alterar-dept-inst");
 		$view .= "<div id=\"alt\"><i class=\"glyphicon glyphicon-ok alt-ico\"></i></div>";
 		$view .= "<div id=\"cancela\"><i class=\"glyphicon glyphicon-remove alt-ico\"></i></div>";
 		$view .= "</form>";
@@ -81,9 +81,9 @@ class DepartamentoView{
 		echo $view;
 	}
 
-	public static function exibeInstitutos($institutos){
-		$view = " <select name=\"institutos\" class=\"form-control\">";
-		$view .= "<option selected disabled style='display: none' value=''>Instituto</option>";
+	public static function exibeInstitutos($institutos,$id){
+		$view = " <select id=\"".$id."\" name=\"institutos\" class=\"form-control\">";
+		$view .= "<option selected disabled style='display: none' value=''></option>";
 		if($institutos != null){
 			for($i=0;$i<sizeof($institutos);$i++){
 				$view .= "<option value=".$institutos[$i]->getId().">";

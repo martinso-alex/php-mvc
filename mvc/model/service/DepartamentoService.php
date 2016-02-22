@@ -17,7 +17,7 @@ class DepartamentoService {
 	public static function inserir($departamento) {
 
 		$departamentoexiste = DepartamentoService::getByNome($departamento->getNome());
-		if(is_null($departamentoexiste)){
+		if(is_null($departamentoexiste) && $departamento->getNome() != "" && $departamento->getInst_id() != ""){
 			DepartamentoDao::inserir($departamento);
 			return(0);
 		}

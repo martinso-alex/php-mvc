@@ -25,7 +25,17 @@ switch($func){
 
 		$departamento = new Departamento();
 		$departamento->setNome($_POST['departamento']);
-		//adicionar o instituto e validar no service 
+		$departamento->setInst_id($_POST['inst_id']);
+
+		$criar = DepartamentoService::inserir($departamento);
+
+		if($criar === 0){
+			$departamentos = DepartamentoService::getDepartamentosInsts();
+			$institutos = InstitutoService::getInstitutos();
+			DepartamentoView::exibeDepartamentos($departamentos,$institutos);
+		}else{
+			echo 'nope';
+		}
 
 	break;
 

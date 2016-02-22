@@ -9,7 +9,7 @@ class InstitutoView{
 		$view .= "<br>";
 
 		$view .= "<form class=\"form-inline\">";
-		$view .= "<input id=\"criar-inst\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"35\" maxlength=\"45\">";
+		$view .= "<input id=\"criar-inst\" class=\"form-control\" type=\"text\" size=\"35\" maxlength=\"45\">";
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
 		$view .= "</form>";
 		$view .= "<br>";
@@ -22,7 +22,7 @@ class InstitutoView{
 		$view .= "<br>";
 
 		$view .= "<form class=\"form-inline\">";
-		$view .= "<input id=\"alterar-inst\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"35\" maxlength=\"45\">";
+		$view .= "<input id=\"alterar-inst\" class=\"form-control\" type=\"text\" size=\"35\" maxlength=\"45\">";
 		$view .= "<div id=\"alt\"><i class=\"glyphicon glyphicon-ok alt-ico\"></i></div>";
 		$view .= "<div id=\"cancela\"><i class=\"glyphicon glyphicon-remove alt-ico\"></i></div>";
 		$view .= "</form>";

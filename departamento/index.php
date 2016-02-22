@@ -25,7 +25,7 @@
 			<li id="curs-nav">CURSO</li>
 		</ul>
 	</div>
-	<div id="inst-view"></div>
+	<div id="dept-view"></div>
 	<img id="elefante" src="../img/elefante-indiano.jpg" alt="elefante">
 
 </body>

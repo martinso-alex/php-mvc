@@ -9,7 +9,7 @@ class DepartamentoView{
 		$view .= "<br>";
 
 		$view .= "<form class=\"form-inline\">";
-		$view .= "<input id=\"criar-inst\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"5\" maxlength=\"3\">";
+		$view .= "<input id=\"criar-dept\" class=\"form-control\" placeholder=\"Nome\" type=\"text\" size=\"5\" maxlength=\"3\">";
 		$view .= DepartamentoView::exibeInstitutos($institutos);
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
 		$view .= "</form>";

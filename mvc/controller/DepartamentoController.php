@@ -21,6 +21,14 @@ switch($func){
 
 	break;
 
+	case 'criar':
+
+		$departamento = new Departamento();
+		$departamento->setNome($_POST['departamento']);
+		//adicionar o instituto e validar no service 
+
+	break;
+
 }
 
 ?>

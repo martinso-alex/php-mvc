@@ -42,7 +42,20 @@ var criar = function(){
 }
 
 var deletar = function(){
-
+	$(document).on('click','.remove', function(){
+		var id = $(this).parent().parent().attr('id');
+		
+		if(confirm('Tem certeza que deseja deletar esse departamento?')){
+			$.ajax({
+				type: "POST",
+				url: '../mvc/controller/DepartamentoController.php',
+				data: {func:'deletar',id:id},
+				success: function(data){
+					$('#dept-view').html(data);
+				}
+			});
+		}
+	});
 }
 
 var alterar = function(){
@@ -51,5 +64,5 @@ var alterar = function(){
 
 $(document).ready(ler);
 $(document).ready(criar);
-//$(document).ready(deletar);
+$(document).ready(deletar);
 //$(document).ready(alterar);

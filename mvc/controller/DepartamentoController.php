@@ -39,6 +39,18 @@ switch($func){
 
 	break;
 
+	case 'deletar':
+
+		$departamento = new Departamento();
+		$departamento->setId($_POST['id']);
+
+		DepartamentoService::delete($departamento);
+		$departamentos = DepartamentoService::getDepartamentosInsts();
+		$institutos = InstitutoService::getInstitutos();
+		DepartamentoView::exibeDepartamentos($departamentos,$institutos);
+
+	break;
+
 }
 
 ?>

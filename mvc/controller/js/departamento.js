@@ -82,8 +82,6 @@ var confirma_alteracao = function(){
 		var nome = $('#alterar-dept').val();
 		var inst_id = $('#alterar-dept-inst').val();
 
-		console.log(nome+" - "+inst_id+" - "+id_alt_global);
-
 		$.ajax({
 			type: "POST",
 			url: '../mvc/controller/DepartamentoController.php',

@@ -43,12 +43,12 @@ class DepartamentoService {
 
 		$departamentoexiste = DepartamentoService::getByNome($departamento->getNome());
 
-		//if(is_null($departamentoexiste) && $departamento->getNome() != "" && $departamento->getInst_id() != null && DepartamentoService::getById($departamento->getId()) != null){
+		if((is_null($departamentoexiste) || $departamentoexiste->getId() == $departamento->getId()) && $departamento->getNome() != "" && $departamento->getInst_id() != null && DepartamentoService::getById($departamento->getId()) != null){
 			DepartamentoDao::alterar($departamento);
 			return 0;
-		//}else{
-		//	return null;
-		//}
+		}else{
+			return null;
+		}
 
 	}
 

@@ -55,7 +55,7 @@ switch($func){
 
 		$departamento = new Departamento();
 		$departamento->setId($_POST['id']);
-		$departamento->setNome($_POST['departamento']);
+		$departamento->setNome($_POST['nome']);
 		$departamento->setInst_id($_POST['inst_id']);
 
 		$alterar = DepartamentoService::alterar($departamento);

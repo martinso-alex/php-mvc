@@ -51,6 +51,25 @@ switch($func){
 
 	break;
 
+	case 'alterar':
+
+		$departamento = new Departamento();
+		$departamento->setId($_POST['id']);
+		$departamento->setNome($_POST['departamento']);
+		$departamento->setInst_id($_POST['inst_id']);
+
+		$alterar = DepartamentoService::alterar($departamento);
+
+		if($alterar === 0){
+			$departamentos = DepartamentoService::getDepartamentosInsts();
+			$institutos = InstitutoService::getInstitutos();
+			DepartamentoView::exibeDepartamentos($departamentos,$institutos);
+		}else{
+			echo 'nope';
+		}
+
+	break;
+
 }
 
 ?>

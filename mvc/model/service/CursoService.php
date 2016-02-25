@@ -7,13 +7,18 @@ class CursoService {
 		return CursoDao::getCursos();
 	}
 
+	public static function getCursosDepts() {
+
+		return CursoDao::getCursosDepts();
+	}
+
 	public static function inserir($curso) {
 		if(is_null(CursoService::getByNome($curso->getNome()))){
 			CursoDao::inserir($curso);
-			return(0);
+			return 0;
 		}
 		else{
-			return NULL;
+			return null;
 		}
 	}
 

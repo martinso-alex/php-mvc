@@ -18,9 +18,9 @@ class DepartamentoDao{
 		if($record == null) return null;
 
 		$departamento = new Departamento();
-		$departamento->setId($record[0]);
-		$departamento->setNome($record[1]);
-		$departamento->setInst_nome($record[2]);
+		$departamento->setId($record['id']);
+		$departamento->setNome($record['nome']);
+		$departamento->setInst_nome($record['nome_inst']);
 
 		return $departamento;
 	}
@@ -57,7 +57,7 @@ class DepartamentoDao{
 	}
 
 	public function getDepartamentosInsts(){
-		$sql = "SELECT Departamento.idDepartamento,Departamento.Nome,Instituto.Nome 
+		$sql = "SELECT Departamento.idDepartamento AS id,Departamento.Nome AS nome,Instituto.Nome AS nome_inst
 				FROM Departamento,Instituto 
 				WHERE Departamento.Instituto_idInstituto = Instituto.idInstituto
 				ORDER BY Departamento.Nome ASC";

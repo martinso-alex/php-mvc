@@ -7,6 +7,7 @@ class Curso{
 	private $duracao;
 	private $cred_form;
 	private $dept_id;
+	private $dept_nome;
 
 	public function getId() {
 		return $this->id;
@@ -46,6 +47,14 @@ class Curso{
 
 	public function setDept_id($dept_id) {
 		$this->dept_id = $dept_id;
+	}
+
+	public function getDept_nome() {
+		return $this->dept_nome;
+	}
+
+	public function setDept_nome($dept_nome) {
+		$this->dept_nome = $dept_nome;
 	}
 
 }

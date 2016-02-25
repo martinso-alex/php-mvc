@@ -9,9 +9,20 @@ class CursoDao{
 		$curso = new Curso();
 		$curso->setId($record["idCurso"]);
 		$curso->setNome($record["Nome"]);
-		$curso->setDuracao($record["Duracao"]);
-		$curso->setCred_form($record["CreditosForm"]);
-		$curso->setDept_id($record["Departamento_idDepartamento"]);
+
+		return $curso;
+	}
+
+	public static function parseCursDept($record){
+
+		if($record == null) return null;
+
+		$curso = new Curso();
+		$curso->setId($record["id"]);
+		$curso->setNome($record["nome"]);
+		$curso->setDuracao($record["duracao"]);
+		$curso->setCred_form($record["cred"]);
+		$curso->setDept_nome($record["nome_dept"]);
 
 		return $curso;
 	}
@@ -28,11 +39,37 @@ class CursoDao{
 		return $array;
 	}
 
+	public static function parseListCursDept($records){
+
+		if ($records == null)
+			return null;
+		
+		for ($i = 0; $i < sizeof($records); $i++){
+			$array[$i] = CursoDao::parseCursDept($records[$i]);
+		}
+		
+		return $array;
+	}
+
 	public function getCursos(){
 		$sql = "SELECT * FROM Curso ORDER BY Nome ASC";
 		$resultset = ConnectionUtil::executarSelect($sql);
 
 		return CursoDao::parseList($resultset);
+	}
+
+	public function getCursosDepts(){
+		$sql = "SELECT Curso.idCurso AS id,
+						Curso.Nome AS nome,
+						Curso.Duracao AS duracao,
+						Curso.CreditosForm AS cred,
+						Departamento.Nome AS nome_dept  
+				FROM Curso,Departamento 
+				WHERE Curso.Departamento_idDepartamento = Departamento.idDepartamento 
+				ORDER BY Curso.Nome ASC";
+		$resultset = ConnectionUtil::executarSelect($sql);
+
+		return CursoDao::parseListCursDept($resultset);
 	}
 
 	public static function inserir($curso) {

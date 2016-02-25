@@ -3,13 +3,14 @@
 
 <head>
 	<title>PHP MVC</title>
-	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/index.css">
 	<link rel="stylesheet" type="text/css" href="../mvc/view/css/curso.css">
 	<script src="../mvc/view/js/jquery.min.js"></script>
 	<script src="../mvc/view/js/bootstrap.min.js"></script>
 	<script src="../mvc/view/js/navigation.js"></script>
+	<script src="../mvc/controller/js/curso.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,8 @@
 			<li id="curs-nav">CURSO</li>
 		</ul>
 	</div>
+	<div id="curs-view"></div>
+	<img id="elefante" src="../img/elefante-indiano.jpg" alt="elefante">
 
 </body>
 

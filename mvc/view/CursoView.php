@@ -1,7 +1,7 @@
 <?php
 
 class CursoView{
-	public static function exibeCursos($cursos){
+	public static function exibeCursos($cursos,$departamentos){
 		$view = "";
 
 		$view .= "<br>";
@@ -9,8 +9,24 @@ class CursoView{
 		$view .= "<br>";
 
 		$view .= "<form class=\"form-inline\">";
-		$view .= "<input id=\"criar-curs\" class=\"form-control\" type=\"text\" size=\"35\" maxlength=\"45\">";
+		$view .= "<input id=\"criar-curs\" class=\"form-control\" type=\"text\" size=\"26\" maxlength=\"45\">";
 
+		$view .= " <select id=\"criar-dura\" name=\"duracao\" class=\"form-control\">";
+		$view .= "<option selected disabled style='display: none' value=''></option>";
+		$view .= "<option value=\"4\">4</option>";
+		$view .= "<option value=\"8\">8</option>";
+		$view .= "<option value=\"10\">10</option>";
+		$view .= "</select>";
+
+		$view .= " <select id=\"criar-cred\" name=\"creditos\" class=\"form-control\">";
+		$view .= "<option selected disabled style='display: none' value=''></option>";
+		$view .= "<option value=\"168\">168</option>";
+		$view .= "<option value=\"186\">186</option>";
+		$view .= "<option value=\"200\">200</option>";
+		$view .= "<option value=\"252\">252</option>";
+		$view .= "</select>";
+
+		$view .= CursoView::exibeDepartamentos($departamentos,'criar-curs-dept');
 		$view .= "<div id=\"add\"><i class=\"glyphicon glyphicon-plus\"></i></div>";
 		$view .= "</form>";
 		$view .= "<br>";
@@ -23,8 +39,24 @@ class CursoView{
 		$view .= "<br>";
 
 		$view .= "<form class=\"form-inline\">";
-		$view .= "<input id=\"alterar-curs\" class=\"form-control\" type=\"text\" size=\"5\" maxlength=\"3\">";
+		$view .= "<input id=\"alterar-curs\" class=\"form-control\" type=\"text\" size=\"26\" maxlength=\"45\">";
 
+		$view .= " <select id=\"alterar-dura\" name=\"duracao\" class=\"form-control\">";
+		$view .= "<option selected disabled style='display: none' value=''></option>";
+		$view .= "<option value=\"4\">4</option>";
+		$view .= "<option value=\"8\">8</option>";
+		$view .= "<option value=\"10\">10</option>";
+		$view .= "</select>";
+
+		$view .= " <select id=\"alterar-cred\" name=\"creditos\" class=\"form-control\">";
+		$view .= "<option selected disabled style='display: none' value=''></option>";
+		$view .= "<option value=\"168\">168</option>";
+		$view .= "<option value=\"186\">186</option>";
+		$view .= "<option value=\"200\">200</option>";
+		$view .= "<option value=\"252\">252</option>";
+		$view .= "</select>";
+
+		$view .= CursoView::exibeDepartamentos($departamentos,'alterar-curs-dept');
 		$view .= "<div id=\"alt\"><i class=\"glyphicon glyphicon-ok alt-ico\"></i></div>";
 		$view .= "<div id=\"cancela\"><i class=\"glyphicon glyphicon-remove alt-ico\"></i></div>";
 		$view .= "</form>";
@@ -86,9 +118,24 @@ class CursoView{
 
 		$view .= "</tbody>";
 		$view .= "</table>";
+		$view .= "<br>";
 		$view .= "</div>";
 
 		echo $view;
+	}
+
+	public static function exibeDepartamentos($departamentos,$id){
+		$view = " <select id=\"".$id."\" name=\"departamentos\" class=\"form-control\">";
+		$view .= "<option selected disabled style='display: none' value=''></option>";
+		if($departamentos != null){
+			for($i=0;$i<sizeof($departamentos);$i++){
+				$view .= "<option value=".$departamentos[$i]->getId().">";
+				$view .= $departamentos[$i]->getNome();
+				$view .= "</option>";
+			}
+		}
+		$view .= "</select>";
+		return $view;
 	}
 }
 

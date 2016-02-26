@@ -16,7 +16,8 @@ switch($func){
 	case 'ler':
 
 		$cursos = CursoService::getCursosDepts();
-		CursoView::exibeCursos($cursos);
+		$departamentos = DepartamentoService::getDepartamentos();
+		CursoView::exibeCursos($cursos,$departamentos);
 
 	break;
 

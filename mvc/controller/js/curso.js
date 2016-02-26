@@ -45,7 +45,20 @@ var criar = function(){
 }
 
 var deletar = function(){
-
+	$(document).on('click','.remove', function(){
+		var id = $(this).parent().parent().attr('id');
+		
+		if(confirm('Tem certeza que deseja deletar esse curso?')){
+			$.ajax({
+				type: "POST",
+				url: '../mvc/controller/CursoController.php',
+				data: {func:'deletar',id:id},
+				success: function(data){
+					$('#curs-view').html(data);
+				}
+			});
+		}
+	});
 }
 
 var alterar = function(){
@@ -62,7 +75,7 @@ var confirma_alteracao = function(){
 
 $(document).ready(ler);
 $(document).ready(criar);
-//$(document).ready(deletar);
+$(document).ready(deletar);
 //$(document).ready(alterar);
 //$(document).ready(cancela_alteracao);
 //$(document).ready(confirma_alteracao);

@@ -41,6 +41,19 @@ switch($func){
 
 	break;
 
+	case 'deletar':
+
+		$curso = new Curso();
+		$curso->setId($_POST['id']);
+
+		CursoService::delete($curso);
+
+		$cursos = CursoService::getCursosDepts();
+		$departamentos = DepartamentoService::getDepartamentos();
+		CursoView::exibeCursos($cursos,$departamentos);
+
+	break;
+
 }
 
 

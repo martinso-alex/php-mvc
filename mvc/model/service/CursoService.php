@@ -13,7 +13,12 @@ class CursoService {
 	}
 
 	public static function inserir($curso) {
-		if(is_null(CursoService::getByNome($curso->getNome()))){
+		if(is_null(CursoService::getByNome($curso->getNome())) &&
+			$curso->getNome() != '' &&
+			$curso->getDuracao() != null &&
+			$curso->getCred_form() != '' &&
+			$curso->getDept_id() != null)
+		{
 			CursoDao::inserir($curso);
 			return 0;
 		}

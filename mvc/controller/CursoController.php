@@ -21,6 +21,26 @@ switch($func){
 
 	break;
 
+	case 'criar':
+
+		$curso = new Curso();
+		$curso->setNome($_POST['nome']);
+		$curso->setDuracao($_POST['dura']);
+		$curso->setCred_form($_POST['cred']);
+		$curso->setDept_id($_POST['dept_id']);
+
+		$criar = CursoService::inserir($curso);
+
+		if($criar === 0){
+			$cursos = CursoService::getCursosDepts();
+			$departamentos = DepartamentoService::getDepartamentos();
+			CursoView::exibeCursos($cursos,$departamentos);
+		}else{
+			echo 'nope';
+		}
+
+	break;
+
 }
 
 

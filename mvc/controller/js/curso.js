@@ -29,17 +29,9 @@ var criar = function(){
 			success: function(data){
 				if(data != 'nope'){
 					$('#curs-view').html(data);
-					var alert = '<div class=\"alert alert-info\">';
-					alert += '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-					alert += 'Curso adicionado com sucesso!';
-					alert += '</div>';
-					$('#alert').html(alert);
+					sucesso('#alert');
 				}else{
-					var alert = '<div class=\"alert alert-danger\">';
-					alert += '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-					alert += 'Já existe um curso com esse nome ou algum campo está vazio!';
-					alert += '</div>';
-					$('#alert').html(alert);
+					erro('#alert');
 				}
 			}
 		});
@@ -96,14 +88,32 @@ var confirma_alteracao = function(){
 				if(data != 'nope'){
 					$('#curs-view').html(data);
 				}else{
-					var alert = '<div class=\"alert alert-danger\">';
-					alert += '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-					alert += 'Já existe um curso com esse nome ou algum campo está vazio!';
-					alert += '</div>';
-					$('#alert-alt').html(alert);
+					erro('#alert-alt');
 				}
 			}
 		});
+	});
+}
+
+function sucesso(id){
+	$.ajax({
+		type: "POST",
+		url: '../mvc/controller/CursoController.php',
+		data: {func:'sucesso'},
+		success: function(data){
+			$(id).html(data);
+		}
+	});
+}
+
+function erro(id){
+	$.ajax({
+		type: "POST",
+		url: '../mvc/controller/CursoController.php',
+		data: {func:'erro'},
+		success: function(data){
+			$(id).html(data);
+		}
 	});
 }
 

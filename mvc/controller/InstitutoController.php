@@ -61,6 +61,18 @@ switch($func){
 
 	break;
 
+	case 'sucesso':
+
+		InstitutoView::sucesso();
+
+	break;
+
+	case 'erro':
+
+		InstitutoView::erro();
+
+	break;
+
 }
 
 ?>

@@ -94,6 +94,22 @@ class DepartamentoView{
 		$view .= "</select>";
 		return $view;
 	}
+
+	public static function sucesso(){
+		$view = "<div class=\"alert alert-info\">";
+		$view .= "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+		$view .= "Departamento adicionado com sucesso!";
+		$view .= "</div>";
+		echo $view;
+	}
+
+	public static function erro(){
+		$view = "<div class=\"alert alert-danger\">";
+		$view .= "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+		$view .= "Já existe um departamento com esse nome ou algum campo está vazio!";
+		$view .= "</div>";
+		echo $view;
+	}
 }
 
 ?>

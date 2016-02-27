@@ -75,6 +75,18 @@ switch($func){
 
 	break;
 
+	case 'sucesso':
+
+		CursoView::sucesso();
+
+	break;
+
+	case 'erro':
+
+		CursoView::erro();
+
+	break;
+
 }
 
 

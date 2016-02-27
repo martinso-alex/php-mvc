@@ -70,6 +70,18 @@ switch($func){
 
 	break;
 
+	case 'sucesso':
+
+		DepartamentoView::sucesso();
+
+	break;
+
+	case 'erro':
+
+		DepartamentoView::erro();
+
+	break;
+
 }
 
 ?>

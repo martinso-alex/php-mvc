@@ -54,6 +54,27 @@ switch($func){
 
 	break;
 
+	case 'alterar':
+
+		$curso = new Curso();
+		$curso->setId($_POST['id']);
+		$curso->setNome($_POST['nome']);
+		$curso->setDuracao($_POST['dura']);
+		$curso->setCred_form($_POST['cred']);
+		$curso->setDept_id($_POST['dept_id']);
+
+		$alterar = CursoService::alterar($curso);
+
+		if($alterar === 0){
+			$cursos = CursoService::getCursosDepts();
+			$departamentos = DepartamentoService::getDepartamentos();
+			CursoView::exibeCursos($cursos,$departamentos);
+		}else{
+			echo 'nope';
+		}
+
+	break;
+
 }
 
 

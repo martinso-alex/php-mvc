@@ -37,7 +37,21 @@ class CursoService {
 	}
 
 	public static function alterar($curso){
-		CursoDao::alterar($curso);
+
+		$cursoexiste = CursoService::getByNome($curso->getNome());
+
+		if((is_null($cursoexiste) || $cursoexiste->getId() == $curso->getId()) &&
+			$curso->getNome() != '' &&
+			$curso->getDuracao() != null &&
+			$curso->getCred_form() != '' &&
+			$curso->getDept_id() != null)
+		{
+			CursoDao::alterar($curso);
+			return 0;
+		}
+		else{
+			return null;
+		}
 	}
 
 	public static function getByNome($curso){

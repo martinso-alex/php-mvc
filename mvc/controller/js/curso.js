@@ -1,3 +1,5 @@
+var id_alt_global;
+
 var ler = function(){
 	$.ajax({
 		type: "POST",
@@ -62,20 +64,52 @@ var deletar = function(){
 }
 
 var alterar = function(){
-
+	$(document).on('click','.pencil', function(){
+		id_alt_global = $(this).parent().parent().attr('id');
+		$('#alt-div').show();
+		$('tr').removeClass('info');
+		$('#'+id_alt_global).addClass('info');
+	});
 }
 
 var cancela_alteracao = function(){
-
+	$(document).on('click','#cancela', function(){
+		$('#alt-div').hide();
+		$('#alert-alt').html('');
+		$('#'+id_alt_global).removeClass('info');
+	});
 }
 
 var confirma_alteracao = function(){
+	$(document).on('click','#alt', function(){
 
+		var nome = $('#alterar-curs').val();
+		var dura = $('#alterar-dura').val();
+		var cred = $('#alterar-cred').val();
+		var dept_id = $('#alterar-curs-dept').val();
+
+		$.ajax({
+			type: "POST",
+			url: '../mvc/controller/CursoController.php',
+			data: {func:'alterar',id:id_alt_global,nome:nome,dura:dura,cred:cred,dept_id:dept_id},
+			success: function(data){
+				if(data != 'nope'){
+					$('#curs-view').html(data);
+				}else{
+					var alert = '<div class=\"alert alert-danger\">';
+					alert += '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+					alert += 'Já existe um curso com esse nome ou algum campo está vazio!';
+					alert += '</div>';
+					$('#alert-alt').html(alert);
+				}
+			}
+		});
+	});
 }
 
 $(document).ready(ler);
 $(document).ready(criar);
 $(document).ready(deletar);
-//$(document).ready(alterar);
-//$(document).ready(cancela_alteracao);
-//$(document).ready(confirma_alteracao);
+$(document).ready(alterar);
+$(document).ready(cancela_alteracao);
+$(document).ready(confirma_alteracao);

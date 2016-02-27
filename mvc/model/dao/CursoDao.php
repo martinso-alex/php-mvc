@@ -91,7 +91,7 @@ class CursoDao{
 	}
 
 	public static function alterar($curso) {
-		$sql = "update Curso set Nome = '".$curso->getNome()."', Duracao = '".$curso->getDuracao()."', CreditosForm = '".$curso->getCred_form()."', Departamento_idDepartamento = '".$curso->getDept_id()."' where idCurso = " . $curso->getId();
+		$sql = "update Curso set Nome = '".$curso->getNome()."', Duracao = ".$curso->getDuracao().", CreditosForm = '".$curso->getCred_form()."', Departamento_idDepartamento = '".$curso->getDept_id()."' where idCurso = " . $curso->getId();
 		ConnectionUtil::executar($sql);
 	}
 

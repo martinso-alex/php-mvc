@@ -7,7 +7,7 @@ class ConnectionUtil {
 		$hostname = 'localhost';
 		$username = 'root';
 		$password = 'veriwicows';
-		$database = 'bd - educacao';
+		$database = 'universidade';
 
 		header('Content-Type: text/html; charset=utf-8');
 		

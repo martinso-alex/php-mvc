@@ -38,7 +38,7 @@ var deletar = function(){
 	$(document).on('click','.remove', function(){
 		var id = $(this).parent().parent().attr('id');
 		
-		if(confirm('Tem certeza que deseja deletar esse instituto?')){
+		if(confirm('Tem certeza que deseja deletar esse instituto?\n\nTodos os departamentos e cursos vinculados a \nele serão perdidos!')){
 			$.ajax({
 				type: "POST",
 				url: '../mvc/controller/InstitutoController.php',

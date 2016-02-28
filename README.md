@@ -1,6 +1,9 @@
 # php-mvc
 Web app que implementa um crud básico utilizando php com arquitetura mvc e sem frameworks.
 
+Modelagem Física (mysql workbench):
+![ScreenShot](img/0-modelagem-fisica.png)
+
 Index:
 ![ScreenShot](img/1-intro.png)
 

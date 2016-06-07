@@ -5,8 +5,8 @@ class ConnectionUtil {
 	function __construct() {
 		// parametros de conexao		
 		$hostname = 'localhost';
-		$username = 'root';
-		$password = 'veriwicows';
+		$username = '';
+		$password = '';
 		$database = 'universidade';
 
 		header('Content-Type: text/html; charset=utf-8');
